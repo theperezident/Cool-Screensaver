@@ -134,9 +134,9 @@ def buildPaths(split_steps, dim, end_pause):
             if currentPoint[i].lookup(matrix) != Icons.EMPTY.value:
                 pass
             elif cycleCount == config.SPLIT_STEPS:
-                currentPoint.append(currentPoint[i])
-                prevPoint.append(prevPoint[i])
-                nextPoint.append(nextPoint[i])
+                currentPoint.append(Point(currentPoint[i].x,currentPoint[i].y))
+                prevPoint.append(Point(prevPoint[i].x,prevPoint[i].y))
+                nextPoint.append(Point(nextPoint[i].x,nextPoint[i].y))
                 currentPoint[i].update(matrix,Icons.SPAWN.value)
             elif prevPoint[i].x == currentPoint[i].x - 1 and nextPoint[i].x == currentPoint[i].x + 1:
                 currentPoint[i].update(matrix,Icons.LINEH.value)
